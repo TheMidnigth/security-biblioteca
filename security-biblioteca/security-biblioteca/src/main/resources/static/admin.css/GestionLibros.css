@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #48f;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header__nav {
+    max-width: 1100px;  
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav__lista {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;  
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.lista__item {
+    text-decoration: none;
+    color: #ecf0f1;
+    font: 500 17px "Montserrat";
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap; 
+}
+
+.lista__item:hover {
+    background-color: blue;
+    color: #ffffff;
+}
+
+.nav__lista li:last-child {
+    margin-left: auto; 
+    padding-right: 20px;
+}
+
+
+.bienvenida {
+    background-color: #ecf0f1;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.bienvenida__contenido {
+    max-width: 600px;
+}
+
+.bienvenida__titulo {
+    font: 900 50px "Poppins";
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.bienvenida__texto {
+    font: 500 50px "Poppins";
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.5;
+}

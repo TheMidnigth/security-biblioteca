@@ -1,0 +1,28 @@
+/** Para titulos h1 */
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/Poppins/Poppins-BlackItalic.ttf") format("truetype");
+    font-weight: 900;
+}
+
+/** Para titulos h2 */
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/Poppins/Poppins-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+/** Para textos p */
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/Poppins/Poppins-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+/** Para textos a */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/Montserrat/Montserrat-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+}
+

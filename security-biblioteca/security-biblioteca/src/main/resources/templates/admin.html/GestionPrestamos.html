@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion De Prestamos</title>
+    <link rel="stylesheet" href="../admin.css/GestionPrestamos.css">
+    <link rel="stylesheet" href="../admin.css/fonts.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="nav__lista">
+                <li><a class="lista__item" href="../admin.html/GestionLibros.html">Gestion De Libros</a></li>
+                <li><a class="lista__item" href="../admin.html/RegistrarLibros.html">Registrar Libros</a></li>
+                <li><a class="lista__item" href="">Editar Libros</a></li>
+                <li><a class="lista__item" href="../admin.html/GestionPrestamos.html">Gestionar Prestamos</a></li>
+                <li><a class="lista__item" href="../admin.html/ListaUsuario.html">Lista Usuarios</a></li>
+                <li><a class="lista__item item--admin">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="gestion-libros">
+        <h2 class="titulo">Gestión de Libros</h2>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>ISBN</th>
+                    <th>Numeros De Paginas</th>
+                    <th>Stock</th>
+                    <th>Disponibilidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>El Principito</td>
+                    <td>Antoine de Saint-Exupéry</td>
+                    <td>Ficción</td>
+                    <td>1943</td>
+                    <td>978-3-16-148410-0</td>
+                    <td>100</td>
+                    <td>10</td>
+                    <td>Disponible</td>
+                    <td>
+                        <button class="boton boton-editar" onclick="confirmarEdicion()">Editar</button>
+                        <button class="boton boton-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cien Años de Soledad</td>
+                    <td>Gabriel García Márquez</td>
+                    <td>Ficción</td>
+                    <td>1967</td>
+                    <td>978-84-376-0494-7</td>
+                    <td>200</td>
+                    <td>5</td>
+                    <td>Prestamo</td>
+                    <td>
+                        <button class="boton boton-editar" onclick="confirmarEdicion()">Editar</button>
+                        <button class="boton boton-eliminar" onclick="confirmarEliminacion()">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- MODAL PARA CONFIRMACIÓN -->
+    <div id="modalConfirmacion" class="modal" style="display: none;">
+        <div class="modal__contenido">
+            <p id="modalMensaje"></p>
+            <button class="boton boton-si" onclick="accionConfirmada()">Sí</button>
+            <button class="boton boton-no" onclick="cerrarModal()">No</button>
+        </div>
+    </div>
+    <script src="../admin.css/javascript/prestamos.js"></script>
+</body>

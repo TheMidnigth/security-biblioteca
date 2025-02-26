@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #48f;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header__nav {
+    max-width: 1100px;  
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav__lista {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;  
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.lista__item {
+    text-decoration: none;
+    color: #ecf0f1;
+    font: 500 17px "Montserrat";
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap; 
+}
+
+.lista__item:hover {
+    background-color: blue;
+    color: #ffffff;
+}
+
+.nav__lista li:last-child {
+    margin-left: auto; 
+    padding-right: 20px;
+}
+
+
+
+/* Título */
+.titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font: 900 40px "Poppins";
+}
+
+/* Estilos de la tabla */
+.tabla {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabla th, .tabla td {
+    font: 500 12px "Poppins", sans-serif;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabla thead {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.tabla tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Botones de estado */
+.boton-estado {
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 14px;
+    color: white;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    min-width: 110px; /* Asegura un tamaño uniforme */
+}
+
+/* Estado "En Préstamo" (naranja) */
+.prestamo {
+    background-color: #e67e22;
+}
+
+.prestamo:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+/* Estado "Devuelto" (verde) */
+.devuelto {
+    background-color: #27ae60;
+}
+
+.devuelto:hover {
+    background-color: #1e8449;
+    transform: scale(1.05);
+}

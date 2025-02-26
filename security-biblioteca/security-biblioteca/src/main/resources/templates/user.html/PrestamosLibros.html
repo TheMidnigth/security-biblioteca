@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros Prestados</title>
+    <link rel="stylesheet" href="../user.css/PrestamosLibros.css">
+    <link rel="stylesheet" href="../admin.css/fonts.css">
+</head>
+<body>
+    <section class="usuarios-prestamo"> 
+        <div class="header-section">
+            <h2 class="titulo">Prestamos/Devoluciones</h2>
+            <div class="actions">
+                <a href="PrestarLibro.html" class="boton-prestar">Prestar</a>
+                <a href="#" class="boton-devolver">Devolver</a>
+            </div>
+            <input type="text" id="search" placeholder="Buscar..." class="search-bar">
+        </div>
+    
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Libro</th>
+                    <th>Stock</th>
+                    <th>Fecha de Préstamo</th>
+                    <th>Fecha de Devolución</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-body">
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>Cien Años de Soledad</td>
+                    <td>2</td>
+                    <td>2025-02-10</td>
+                    <td>2025-03-10</td>
+                    <td><button class="boton-estado prestamo">En Préstamo</button></td>
+                </tr>
+                <tr>
+                    <td>María Gómez</td>
+                    <td>El Principito</td>
+                    <td>2</td>
+                    <td>2025-02-05</td>
+                    <td>2025-03-05</td>
+                    <td><button class="boton-estado devuelto">Devuelto</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <script>
+        document.getElementById("search").addEventListener("keyup", function() {
+        let filtro = this.value.toLowerCase();
+        let filas = document.querySelectorAll("#tabla-body tr");
+
+        filas.forEach(function(fila) {
+            let textoFila = fila.textContent.toLowerCase();
+            if (textoFila.includes(filtro)) {
+                fila.style.display = "";
+            } else {
+                fila.style.display = "none";
+            }
+        });
+    });
+    </script>
+</table>
+</body>
+</html>

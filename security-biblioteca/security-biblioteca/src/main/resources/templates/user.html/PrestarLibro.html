@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestar Libro</title>
+    <link rel="stylesheet" href="../user.css/PrestarLibro.css">
+    <link rel="stylesheet" href="../admin.css/fonts.css">
+</head>
+<body>
+    <section class="registro-prestamo">
+        <h2 class="titulo">Registrar Préstamo de Libro</h2>
+        <form id="form-prestamo">
+            <div class="campo">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+    
+            <div class="campo">
+                <label for="libro">Libro:</label>
+                <select id="libro" name="libro" required>
+                    <option value="" disabled selected>Seleccione un libro</option>
+                    <option value="Cien Años de Soledad">Cien Años de Soledad</option>
+                    <option value="El Principito">El Principito</option>
+                    <option value="Don Quijote de la Mancha">Don Quijote de la Mancha</option>
+                    <option value="Crimen y Castigo">Crimen y Castigo</option>
+                    <option value="1984">1984</option>
+                </select>
+            </div>
+    
+            <div class="campo">
+                <label for="fecha-devolucion">Fecha de Devolución:</label>
+                <input type="date" id="fecha-devolucion" name="fecha-devolucion" required>
+            </div>
+    
+            <div class="campo">
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado">
+                    <option value="prestamo">En Préstamo</option>
+                    <option value="devuelto">Devuelto</option>
+                </select>
+            </div>
+    
+            <button type="submit" class="boton-registrar">Registrar Préstamo</button>
+        </form>
+    </section>
+</body>
+</html>

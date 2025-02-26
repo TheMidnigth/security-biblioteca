@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "PasswordGenerator",
+            "request": "launch",
+            "mainClass": "com.example.security_biblioteca.config.PasswordGenerator",
+            "projectName": "security-biblioteca"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SecurityBibliotecaApplication<security-biblioteca>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.security_biblioteca.SecurityBibliotecaApplication",
+            "projectName": "security-biblioteca",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=56595 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=security-biblioteca"
+        }
+    ]
+}

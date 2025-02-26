@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista De Usuario</title>
+    <link rel="stylesheet" href="../admin.css/ListaUsuario.css">
+    <link rel="stylesheet" href="../admin.css/fonts.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="nav__lista">
+                <li><a class="lista__item" href="../admin.html/GestionLibros.html">Gestion De Libros</a></li>
+                <li><a class="lista__item" href="../admin.html/RegistrarLibros.html">Registrar Libros</a></li>
+                <li><a class="lista__item" href="">Editar Libros</a></li>
+                <li><a class="lista__item" href="../admin.html/GestionPrestamos.html">Gestionar Prestamos</a></li>
+                <li><a class="lista__item" href="">Lista Usuarios</a></li>
+                <li><a class="lista__item item--admin">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="usuarios-prestamo">
+        <h2 class="titulo">Lista de Usuarios con Préstamo</h2>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Libro</th>
+                    <th>Fecha de Préstamo</th>
+                    <th>Fecha de Devolución</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>Cien Años de Soledad</td>
+                    <td>10/02/2025</td>
+                    <td>10/03/2025</td>
+                    <td><button class="boton-estado prestamo">En Préstamo</button></td>
+                </tr>
+                <tr>
+                    <td>María Gómez</td>
+                    <td>El Principito</td>
+                    <td>05/02/2025</td>
+                    <td>05/03/2025</td>
+                    <td><button class="boton-estado devuelto">Devuelto</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>
