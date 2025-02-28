@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PasswordGenerator",
+            "request": "launch",
+            "mainClass": "com.example.security_biblioteca.Util.PasswordGenerator",
+            "projectName": "security-biblioteca"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-SecurityBibliotecaApplication<security-biblioteca>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
