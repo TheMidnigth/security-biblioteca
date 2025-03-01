@@ -28,14 +28,14 @@ public class SecurityConfig {
         return httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/styles/**", "/scripts/**" , "/scripts/**").permitAll()
+                        .requestMatchers("/", "/styles/**", "/scripts/**").permitAll()
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/user/**").hasRole("USUARIO")
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(handling -> handling
-                        .accessDeniedPage("Papu Te me relejas"))
+                        .accessDeniedPage("/error/403"))
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                         .invalidSessionUrl("/login")
