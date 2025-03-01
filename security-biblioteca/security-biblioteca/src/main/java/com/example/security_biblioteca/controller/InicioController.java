@@ -20,7 +20,7 @@ public class InicioController {
 
     @GetMapping("/login")
     public String login() {
-        return "login";
+        return "Login";
     }
 
     // Se obtienen los libros de la base de datos y se envían a la vista
@@ -29,6 +29,6 @@ public class InicioController {
         List<BookModel> books = bookService.getBooks();
         model.addAttribute("books", books);
         
-        return "GestionLibros";
+        return "Libro";
     }
 }

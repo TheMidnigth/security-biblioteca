@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Libros</title>
+    <link rel="stylesheet" th:href="@{/Css/libros.css}">
+</head>
+<body>
+<header>
+    <h1>Biblioteca</h1>
+    <nav>
+        <ul>
+            <li th:if="${#authorization.expression('hasRole(''Admin'')')}"><a href="/Api/Admin/Libros">Administrar Libros</a></li>
+            <li><a href="/Api/Auth/Logout">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2>Lista de Libros</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Género</th>
+            <th>Descripción</th>
+            <th>Autor</th>
+            <th>Año</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="libro : ${libros}">
+                <td th:text="${libro.id}"></td>
+                <td th:text="${libro.title}"></td>
+                <td th:text="${libro.gender}"></td>
+                <td th:text="${libro.description}"></td>
+                <td th:text="${libro.author}"></td>
+                <td th:text="${libro.year}"></td>
+            <td>
+                <form th:action="@{/delete}" method="post">
+                    <input type="hidden" name="id" th:value="${libro.Id}" />
+                    <button type="submit">Eliminar</button>
+                </form>
+                <form th:action="@{/update}" method="post">
+                    <input type="hidden" name="id" th:value="${libro.Id}" />
+                    <input type="text" name="titulo" placeholder="Titulo" required />
+                    <input type="text" name="genero" placeholder="Género" required />
+                    <input type="text" name="descripcion" placeholder="descripcion" required />
+                    <input type="text" name="autor" placeholder="Autor" required />
+                    <input type="text" name="anno" placeholder="Año" required />
+                    <input type="number" name="disponible" placeholder="Disponibilidad" required />
+                    <button type="submit">Actualizar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h3>Agregar Libro</h3>
+    <form th:action="@{/Agregar}" method="post">
+        <input type="text" name="Titulo" placeholder="Titulo" required />
+        <input type="text" name="Genero" placeholder="Género" required />
+        <input type="text" name="Descripcion" placeholder="descripcion" required />
+        <input type="text" name="Autor" placeholder="Autor" required />
+        <input type="text" name="Anno" placeholder="Año" required />
+        <input type="number" name="Disponible" placeholder="Disponibilidad" required />
+        <button type="submit">Agregar</button>
+    </form>
+</main>
+<footer>
+    <p>&copy; 2025 Biblioteca</p>
+</footer>
+</body>
+</html>
