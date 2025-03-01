@@ -1,40 +1,33 @@
 package com.example.security_biblioteca.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.security_biblioteca.model.BookModel;
 import com.example.security_biblioteca.model.UserModel;
+import com.example.security_biblioteca.repository.BookRepository;
 import com.example.security_biblioteca.repository.UserRepository;
 
 
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+        @Autowired
+        private UserRepository userRepository;
 
-    
-    private PasswordEncoder passwordEncoder;
+        @Autowired
+        private BookRepository bookRepository;
 
+        public void registerbook(String username,Long bookId) {
+            UserModel user = userRepository.findByUsername(username)
+            .orElseThrow(() -> new RuntimeException("Usuario no encontrado" + username));
 
+            BookModel books = bookRepository.findById(bookId)
+            .orElseThrow(() -> new RuntimeException("Libro no encontrado" + bookId));
+            
+            user.getBooks().add(books);
+            userRepository.save(user);
 
-    public void registerUser(UserModel user) {
-    user.setPassword(passwordEncoder.encode(user.getPassword()));
-    userRepository.save(user);
-}
-
-    
-    public UserModel findByUsername(String username) {
-        return userRepository.findByUsername(username).orElse(null);
-    }
-
-    public boolean checkPassword(String username, String rawPassword) {
-        UserModel user = findByUsername(username);
-        if (user != null) {
-            return passwordEncoder.matches(rawPassword, user.getPassword());
         }
-        return false;
-    }
 
 }
