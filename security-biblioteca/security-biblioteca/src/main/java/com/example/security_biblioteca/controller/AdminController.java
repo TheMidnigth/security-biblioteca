@@ -25,12 +25,12 @@ public class AdminController {
         List<BookModel> books = bookService.getBooks();
         model.addAttribute("books", books);
 
-        return "admin";
+        return "Libros";
     }
 
     @PostMapping("/admin/home")
     public String addBook(@RequestParam String title, @RequestParam String author){
-        bookService.addBook(title, author,0);
+        bookService.addBook(title, author);
         return "redirect:/admin/home";
     }
 
@@ -42,7 +42,7 @@ public class AdminController {
 
     @PostMapping("/update")
     public String updateBook(@RequestParam Long id, @RequestParam String title, @RequestParam String author){
-        bookService.updateBook(id, title, author, 0);
+        bookService.updateBook(id, title, author);
         return "redirect:/admin/home";
     }
 

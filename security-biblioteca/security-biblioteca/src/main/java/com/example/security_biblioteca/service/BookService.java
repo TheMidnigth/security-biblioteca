@@ -27,21 +27,19 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public BookModel addBook (String title, String author, int availableCopies) {
+    public BookModel addBook (String title, String author) {
         BookModel newBook = BookModel.builder()
                 .title(title)
                 .author(author)
-                .availableCopies(availableCopies)
                 .build();
         return bookRepository.save(newBook);
     }
 
-    public BookModel updateBook(Long id, String title, String author, int availableCopies) {
+    public BookModel updateBook(Long id, String title, String author) {
         BookModel book = bookRepository.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("libro aviles id: " + id));
         book.setTitle(title);
         book.setAuthor(author);
-        book.setAvailableCopies(availableCopies);
         return bookRepository.save(book);
     }
 

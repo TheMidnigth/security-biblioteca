@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Libros</title>
+    <link rel="stylesheet" th:href="@{/Css/Usuarios.css}">
+</head>
+<body>
+    <header>
+        <h1>Biblioteca Virtual</h1>
+        <nav>
+            <ul>
+                <li><a href="/Api/User/Prestamos">Consultar Mis Préstamos</a></li>
+                <li th:if="${#authorization.expression('hasRole(''Admin'')')}"><a href="/Api/Admin/Libros">Administrar Libros</a></li>
+                <li><a href="/Api/Auth/Logout">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="table-container">
+            <section>
+                <h2>Catálogo de Libros</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Titulo</th>
+                                <th>Género</th>
+                                <th>Descripcion</th>
+                                <th>Autor</th>
+                                <th>Año</th>
+                                <th>Disponible</th>
+                                <th>Método</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        <tr th:each="libro : ${libros}">
+                                <td th:text="${libro.Id}"></td>
+                                <td th:text="${libro.Titulo}"></td>
+                                <td th:text="${libro.Genero}"></td>
+                                <td th:text="${libro.Descripcion}"></td>
+                                <td th:text="${libro.Autor}"></td>
+                                <td th:text="${libro.Anno}"></td>
+                                <td th:text="${libro.Disponible}"></td>
+                                <td>
+                                    <form th:action="@{/Api/User/Prestamo}" method="post">
+                                        <input type="hidden" name="id" th:value="${libro.Id}">
+                                        <button type="submit"  class="solicitar-btn">Solicitar Préstamo</button>
+                                    </form>
+                                </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto en color claro */
+    padding: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Estilos principales */
+main {
+    background: #1e1e1e;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+h2 {
+    color: #bb86fc;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: #252525;
+    color: #e0e0e0;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+table:hover {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+/* Estilos de los formularios */
+form {
+    margin-top: 15px;
+    animation: fadeIn 0.8s ease-in-out;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+input, button {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #252525;
+    color: #e0e0e0;
+    transition: all 0.3s ease-in-out;
+}
+
+input {
+    width: calc(100% - 20px);
+}
+
+button {
+    background-color: #bb86fc;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #9b59b6;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #bb86fc;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 5px;
+    animation: fadeIn 1.2s ease-in-out;
+}
