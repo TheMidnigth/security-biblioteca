@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #48f;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header__nav {
+    max-width: 1100px;  
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav__lista {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;  
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.lista__item {
+    text-decoration: none;
+    color: #ecf0f1;
+    font: 500 17px "Montserrat";
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap; 
+}
+
+
+.nav__lista li:last-child {
+    margin-left: auto; 
+    padding-right: 20px;
+}
+
+
+.bienvenida {
+    background-color: #ecf0f1;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.bienvenida__contenido {
+    max-width: 600px;
+}
+
+.bienvenida__titulo {
+    font: 900 50px "Poppins";
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.bienvenida__texto {
+    font: 500 50px "Poppins";
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.5;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+ /* Ocultar el menú por defecto */
+.dropdown__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #48f;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    list-style: none;
+    padding: 3px 0;
+    min-width: 100px;
+    z-index: 1000;
+}
+
+/* Estilo para los elementos del menú */
+.dropdown__menu .dropdown__item {
+    text-decoration: none;
+    display: block;
+    color: #ecf0f1;
+    font: 500 16px "Montserrat";
+    padding: 10px 15px;
+    text-align: center;
+}
+
+
+
+/* Mostrar el menú al pasar el cursor */
+.dropdown:hover .dropdown__menu {
+    display: block;
+}

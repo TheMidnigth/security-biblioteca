@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.example.security_biblioteca.model.UserModel;
-import com.example.security_biblioteca.repository.UserRepository;
+import com.example.security_biblioteca.Repository.UserRepository;
 
 @Service
 public class CustomerUserDetailService implements UserDetailsService {
@@ -30,10 +30,11 @@ public class CustomerUserDetailService implements UserDetailsService {
         });
         System.out.println("Usuario encontrado ".concat(user.getUsername()));
         return new org.springframework.security.core.userdetails.User(
-            user.getUsername(),
-            user.getPassword(),
-            user.getRoles().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toSet())
-        );
+                user.getUsername(),
+                user.getPassword(),
+                user.getRoles().stream()
+                        .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+                        .collect(Collectors.toSet()));
     }
 
 }

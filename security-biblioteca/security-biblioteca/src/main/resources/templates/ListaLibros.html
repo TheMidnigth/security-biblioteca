@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion De Prestamos</title>
+    <link rel="stylesheet" href="/Css/ListaLibros.css">
+    <link rel="stylesheet"  href="/Css/fonts.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="nav__lista">
+                <li><a class="lista__item" th:href="@{/homeAdmin}">Gestion De Libros</a></li>
+                <li><a class="lista__item" th:href="@{/registrarLibros}">Registrar Libros</a></li>
+                <li><a class="lista__item" href="">Lista Libros</a></li>
+                <li><a class="lista__item item--admin">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="gestion-libros">
+        <h2 class="titulo">Gestión de Libros</h2>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>Numeros De Paginas</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="libros : ${book}">
+                    <td th:text="${libros.title}">El Principito</td>
+                    <td th:text="${libros.author}">Antoine de Saint-Exupéry</td>
+                    <td th:text="${libros.genre}">Ficción</td>
+                    <td th:text="${libros.publicationYear}">1943</td>
+                    <td th:text="${libros.pageCount}">100</td>
+                    <td th:text="${libros.stock}">10</td>
+                    <td>
+                        <button class="boton boton-editar"  th:onclick="|confirmarEdicion(${libros.id})|">Editar</button>
+                        <button class="boton boton-eliminar" th:onclick="|confirmarEliminacion(${libros.id})|">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- MODAL PARA CONFIRMACIÓN -->
+    <div id="modalConfirmacion" class="modal" style="display: none;">
+        <div class="modal__contenido">
+            <p id="modalMensaje"></p>
+            <button class="boton boton-si" onclick="accionConfirmada()">Sí</button>
+            <button class="boton boton-no" onclick="cerrarModal()">No</button>
+        </div>
+    </div>
+    <script src="/Css/javascript/prestamos.js"></script>
+</body>
