@@ -1,14 +1,18 @@
 package com.example.security_biblioteca.model;
 
-import java.time.LocalDate;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name="loan")
 public class LoanModel {
 
     @Id
@@ -23,7 +27,5 @@ public class LoanModel {
     @JoinColumn(name = "book_id")
     private BookModel book;
 
-    private LocalDate loanDate;
-    private String status;
 
 }

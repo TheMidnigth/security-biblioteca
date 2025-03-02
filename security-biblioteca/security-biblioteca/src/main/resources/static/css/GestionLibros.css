@@ -37,10 +37,6 @@ body{
     white-space: nowrap; 
 }
 
-.lista__item:hover {
-    background-color: blue;
-    color: #ffffff;
-}
 
 .nav__lista li:last-child {
     margin-left: auto; 
@@ -55,7 +51,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh;
+    height: 70vh;
 }
 
 .bienvenida__contenido {
@@ -73,4 +69,41 @@ body{
     font-size: 18px;
     color: #34495e;
     line-height: 1.5;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+ /* Ocultar el menú por defecto */
+.dropdown__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #48f;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    list-style: none;
+    padding: 3px 0;
+    min-width: 100px;
+    z-index: 1000;
+}
+
+/* Estilo para los elementos del menú */
+.dropdown__menu .dropdown__item {
+    text-decoration: none;
+    display: block;
+    color: #ecf0f1;
+    font: 500 16px "Montserrat";
+    padding: 10px 15px;
+    text-align: center;
+}
+
+
+
+/* Mostrar el menú al pasar el cursor */
+.dropdown:hover .dropdown__menu {
+    display: block;
 }

@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion De Libros</title>
-    <link rel="stylesheet" th:href="@{/admin.css/GestionLibros.css}">
-    <link rel="stylesheet" th:href="@{/admin.css/fonts.css}">
+    <link rel="stylesheet" href="/Css/GestionLibros.css">
+    <link rel="stylesheet" href="/Css/fonts.css">
 </head>
 <body>
     <header class="header">
         <nav class="header__nav">
             <ul class="nav__lista">
-                <li><a class="lista__item" href="">Gestion De Libros</a></li>
-                <li><a class="lista__item" href="../admin.html/RegistrarLibros.html">Registrar Libros</a></li>
-                <li><a class="lista__item" href="">Editar Libros</a></li>
-                <li><a class="lista__item" href="../admin.html/GestionPrestamos.html">Gestionar Prestamos</a></li>
-                <li><a class="lista__item" href="../admin.html/ListaUsuario.html">Lista Usuarios</a></li>
-                <li><a class="lista__item item--admin">ADMIN</a></li>
+                <li><a class="lista__item" href="#">Gestion De Libros</a></li>
+                <li><a class="lista__item" th:href="@{/registrarLibros}">Registrar Libros</a></li>
+                <li><a class="lista__item" th:href="@{/listaLibros}">Lista Libros</a></li>
+                
+                <!-- Menú desplegable en ADMIN -->
+                <li class="dropdown">
+                    <a class="lista__item item--admin" href="#">ADMIN</a>
+                    <ul class="dropdown__menu">
+                        <li><a th:href="@{/login}" class="dropdown__item">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
+    
     <section class="bienvenida">
         <div class="bienvenida__contenido">
             <h1 class="bienvenida__titulo">Bienvenido,Administrador</h1>

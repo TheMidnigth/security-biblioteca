@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home User</title>
+    <link rel="stylesheet" href="/Css/HomeUser.css">
+    <link rel="stylesheet"  href="/Css/fonts.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a th:href="@{/ListaPrestamos}">Prestar Libros</a></li>
+        </ul>
+        <ul>
+            <li class="dropdown">
+                <a href="#">Users ▼</a>
+                <div class="dropdown-content">
+                    <a th:href="@{/login}">Cerrar Sesión</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="bienvenida">
+        <h1>¡Bienvenido a la Biblioteca Virtual!</h1>
+        <p>Explora nuestro catálogo de libros y administra tus préstamos de manera sencilla.</p>
+        <a href="#" class="btn">Explorar Libros</a>
+    </section>
+    
+</body>
+</html>

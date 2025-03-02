@@ -28,11 +28,11 @@ public class BookModel {
 
     @Column(nullable = false, name = "autor")
     private String author;
-    private String gender;
-    private int year;
-    private String description;
-    
-    private int availableCopies;
+
+    private String genre;
+    private int publicationYear;
+    private int pageCount;
+    private int stock;
 
     //Cardinalidad para la tabla users
     @ManyToMany(mappedBy = "books")

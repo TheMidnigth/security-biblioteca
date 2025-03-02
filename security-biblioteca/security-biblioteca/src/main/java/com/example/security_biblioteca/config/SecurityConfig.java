@@ -15,9 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import com.example.security_biblioteca.repository.UserRepository;
-
-
+import com.example.security_biblioteca.Repository.UserRepository;
 
 
 @Configuration
@@ -28,7 +26,7 @@ public class SecurityConfig {
         return httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/styles/**", "/scripts/**").permitAll()
+                        .requestMatchers("/", "/Css/**", "/assets/**","/javascript/**").permitAll()
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/user/**").hasRole("USUARIO")
@@ -89,9 +87,9 @@ public class SecurityConfig {
         return (request, response, authentication) -> {
             String role = authentication.getAuthorities().toString();
             if (role.contains("ADMIN")) {
-                response.sendRedirect("/admin/home");
+                response.sendRedirect("/homeAdmin");
             } else if (role.contains("USUARIO")) {
-                response.sendRedirect("/user/home");
+                response.sendRedirect("/homeUser");
             } else {
                 response.sendRedirect("/");
             }

@@ -1,4 +1,4 @@
-package com.example.security_biblioteca.repository;
+package com.example.security_biblioteca.Repository;
 
 import java.util.Optional;
 
