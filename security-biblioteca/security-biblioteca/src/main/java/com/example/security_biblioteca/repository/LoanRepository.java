@@ -9,6 +9,6 @@ import com.example.security_biblioteca.model.LoanModel;
 
 @Repository
 public interface LoanRepository extends JpaRepository<LoanModel, Long> {
-    List<LoanModel> findByUserId(Long userId); 
+    List<LoanModel> findByUser_Id(Long userId);
 
 }
