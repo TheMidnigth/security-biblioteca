@@ -42,6 +42,12 @@ public class DataLoader implements CommandLineRunner {
                     .username("user2")
                     .password("$2a$10$W0kzU/wjOfQfWFaJiunHc.LVayAF4jXhLvL8bLV74KyMJYlUfRiRq") // user321
                     .roles(Set.of("USUARIO"))
+                    .build(),
+                
+                    UserModel.builder()
+                    .username("keiner")
+                    .password("$2a$10$XOm5GgF9JwcdtdkYvMiNreXcK3DKIFOND.sR7eTuSAkLwBpY3Bh1q") // keiner123
+                    .roles(Set.of("USUARIO"))
                     .build()
             );
             userRepository.saveAll(users);

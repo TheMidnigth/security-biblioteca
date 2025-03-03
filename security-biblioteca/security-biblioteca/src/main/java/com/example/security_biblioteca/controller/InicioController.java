@@ -14,6 +14,12 @@ public class InicioController {
         return "login";
     }
 
+    @GetMapping("/registro")
+    public String registro() {
+        System.out.println("Mostrando página de registro...");
+        return "registro";
+    }
+
     @GetMapping("/ListaUsuarioPrestamos")
     public String listaUsuarioPrestamos() {
         return "ListaUsuarioPrestamos";
