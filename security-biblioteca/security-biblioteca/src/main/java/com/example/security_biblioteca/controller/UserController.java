@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.security_biblioteca.Repository.UserRepository;
+import com.example.security_biblioteca.repository.UserRepository;
 import com.example.security_biblioteca.model.LoanModel;
 import com.example.security_biblioteca.model.UserModel;
 import com.example.security_biblioteca.service.BookService;

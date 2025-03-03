@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 import com.example.security_biblioteca.model.BookModel;
 import com.example.security_biblioteca.model.UserModel;
-import com.example.security_biblioteca.Repository.BookRepository;
-import com.example.security_biblioteca.Repository.UserRepository;
+import com.example.security_biblioteca.repository.BookRepository;
+import com.example.security_biblioteca.repository.UserRepository;
 
 @Component
 public class DataLoader implements CommandLineRunner {

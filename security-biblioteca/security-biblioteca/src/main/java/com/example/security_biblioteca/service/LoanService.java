@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.security_biblioteca.Repository.BookRepository;
-import com.example.security_biblioteca.Repository.LoanRepository;
+import com.example.security_biblioteca.repository.BookRepository;
+import com.example.security_biblioteca.repository.LoanRepository;
 import com.example.security_biblioteca.model.BookModel;
 import com.example.security_biblioteca.model.LoanModel;
 

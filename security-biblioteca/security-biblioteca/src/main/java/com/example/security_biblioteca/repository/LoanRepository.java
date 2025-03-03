@@ -1,4 +1,4 @@
-package com.example.security_biblioteca.Repository;
+package com.example.security_biblioteca.repository;
 
 import java.util.List;
 
